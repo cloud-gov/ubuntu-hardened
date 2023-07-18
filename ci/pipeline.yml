@@ -1,0 +1,15 @@
+jobs:
+- name: ubuntu-hardened
+  plan:
+    - get: common-pipelines
+      trigger: true
+    - set_pipeline: self
+      file: common-pipelines/container/pipeline.yml
+
+resources:
+- name: common-pipelines
+  type: git
+  source:
+    uri: https://github.com/cloud-gov/common-pipelines
+    branch: container-pipeline
+    commit_verification_keys: ((cloud-gov-pgp-keys))
