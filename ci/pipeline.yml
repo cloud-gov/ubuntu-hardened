@@ -1,15 +1,27 @@
 jobs:
-- name: ubuntu-hardened
+- name: bootstrap
   plan:
     - get: common-pipelines
       trigger: true
+
+    - get: src
+
     - set_pipeline: self
       file: common-pipelines/container/pipeline.yml
+      var_files:
+        - src/container/ci/vars.yml
 
 resources:
 - name: common-pipelines
   type: git
   source:
     uri: https://github.com/cloud-gov/common-pipelines
-    branch: container-pipeline
+    branch: main
+    commit_verification_keys: ((cloud-gov-pgp-keys))
+
+- name: src
+  type: git
+  source:
+    uri: https://github.com/((src-repo))
+    branch: main
     commit_verification_keys: ((cloud-gov-pgp-keys))
