@@ -1,3 +1,2 @@
 # vars.yml
-oci-build-params:
-  CONTEXT: src/ci
+oci-build-params: {}
