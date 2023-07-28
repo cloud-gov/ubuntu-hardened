@@ -9,7 +9,7 @@ jobs:
     - set_pipeline: self
       file: common-pipelines/container/pipeline.yml
       var_files:
-        - src/container/ci/vars.yml
+        - src/ci/vars.yml
 
 resources:
 - name: common-pipelines
