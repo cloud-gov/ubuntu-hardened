@@ -23,5 +23,5 @@ resources:
   type: git
   source:
     uri: https://github.com/((src-repo))
-    branch: ubuntu-hardened-vars
+    branch: main
     commit_verification_keys: ((cloud-gov-pgp-keys))
