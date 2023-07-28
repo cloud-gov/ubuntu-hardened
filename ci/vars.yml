@@ -1,3 +1,2 @@
 # vars.yml
-CONTEXT: src
-DOCKERFILE: Dockerfile
+oci-build-params: {}
