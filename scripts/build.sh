@@ -39,8 +39,8 @@ curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh 
 echo "Create dockerenv file"
 touch /.dockerenv
 
-echo "Update permissions of log file"
-chmod 640 /var/log/apt/history.log
+echo "Update permissions of apt log files"
+chmod 640 /var/log/apt/*
 
 echo "UA hardening"
 usg fix cis_level1_server
