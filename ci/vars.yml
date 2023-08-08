@@ -1,4 +1,0 @@
-# vars.yml
-base-image: ubuntu
-base-image-tag: "22.04"
-oci-build-params: {}
