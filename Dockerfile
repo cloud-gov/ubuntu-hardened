@@ -1,6 +1,7 @@
 # Ubuntu-hardened base docker image
+ARG base_image
 
-FROM ubuntu:22.04
+FROM ${base_image}
 RUN apt update && apt upgrade -y
 
 # Copy local project directories to container image
