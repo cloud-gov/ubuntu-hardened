@@ -39,9 +39,6 @@ curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh 
 echo "Create dockerenv file"
 touch /.dockerenv
 
-echo "Update permissions of log file"
-chmod 640 /var/log/apt/history.log
-
 echo "UA hardening"
 usg fix cis_level1_server
 
@@ -50,4 +47,3 @@ apt-get purge --auto-remove -y \
   ubuntu-advantage-tools && \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/lib/usg
-
