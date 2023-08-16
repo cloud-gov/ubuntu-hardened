@@ -12,6 +12,8 @@ WORKDIR /opt/concourse-ci/task
 
 ARG TOKEN
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Use a custom build script instead of messy chained together RUN
 # or multiple RUN statements that add bloat to the image
 RUN /opt/concourse-ci/task/scripts/build.sh
