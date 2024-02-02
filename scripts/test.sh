@@ -4,6 +4,7 @@
 # Source configuration environment variables
 #
 source ./config.sh
+
 #
 # Source library functions
 #
