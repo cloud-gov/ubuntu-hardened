@@ -1,4 +1,4 @@
 #
 # System settings
 #
-SYSTEM_TIMEZONE=EST
+SYSTEM_TIMEZONE=UTC
