@@ -37,7 +37,7 @@ echo "Create dockerenv file"
 touch /.dockerenv
 
 echo "UA hardening"
-usg fix cis_level1_server
+usg fix disa_stig
 
 echo "Cleaning up ua"
 rm ua-attach-config.yaml
