@@ -2,6 +2,9 @@
 ARG base_image=ubuntu:22.04
 
 FROM ${base_image}
+
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt update && apt upgrade -y
 
 # Copy local project directories to container image
