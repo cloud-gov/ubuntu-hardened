@@ -36,8 +36,11 @@ apt-get -y -q install \
 echo "Create dockerenv file"
 touch /.dockerenv
 
+addgroup syslog
+
 echo "UA hardening"
 usg fix disa_stig
 
 echo "Cleaning up ua"
+
 rm ua-attach-config.yaml
