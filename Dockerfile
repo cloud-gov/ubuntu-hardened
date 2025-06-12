@@ -5,7 +5,7 @@ FROM ${base_image}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt upgrade -y
+RUN apt update -qq && apt upgrade -qq -y
 
 # Copy local project directories to container image
 COPY . /opt/concourse-ci/task

@@ -20,7 +20,7 @@ echo "Updating system timezone"
 ln -sf "/usr/share/zoneinfo/$SYSTEM_TIMEZONE" /etc/localtime
 
 apt-get update
-apt-get -y -q install \
+apt-get -y -qq install \
   ubuntu-advantage-tools ca-certificates \
   tzdata
 
