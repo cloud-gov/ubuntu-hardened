@@ -9,7 +9,7 @@ source ./config.sh
 
 echo "Configuring ua attach config"
 cat <<EOF >> ua-attach-config.yaml
-token: $TOKEN
+token: $(cat /run/secrets/TOKEN)
 enable_services:
 - usg
 - esm-infra
@@ -44,3 +44,4 @@ apt-get purge --auto-remove -y \
   ubuntu-advantage-tools && \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/lib/usg
+rm ua-attach-config.yaml
