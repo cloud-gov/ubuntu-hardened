@@ -42,5 +42,4 @@ echo "UA hardening"
 usg fix disa_stig
 
 echo "Cleaning up ua"
-
 rm ua-attach-config.yaml
