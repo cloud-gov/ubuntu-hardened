@@ -39,6 +39,7 @@ touch /.dockerenv
 addgroup syslog
 
 chgrp syslog /var/log
+find /var/log -perm /137 ! -name '*[bw]tmp' ! -name '*lastlog' -type f -exec chmod 640 '{}' \;
 
 echo "UA hardening"
 usg fix disa_stig
