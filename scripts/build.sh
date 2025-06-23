@@ -38,6 +38,13 @@ touch /.dockerenv
 
 addgroup syslog
 
+readarray -t files < <(find /var/log/)
+for file in "${files[@]}"; do
+    if basename $file | grep -qE '^.*$'; then
+        chmod 0640 $file
+    fi
+done
+
 echo "UA hardening"
 usg fix disa_stig
 
