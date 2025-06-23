@@ -38,10 +38,15 @@ touch /.dockerenv
 
 addgroup syslog
 
-chmod 0640 /var/log/syslog
-
 echo "UA hardening"
 usg fix disa_stig
+
+readarray -t files < <(find /var/log/)
+for file in "${files[@]}"; do
+    if basename $file | grep -qE '^.*$'; then
+        chmod 0640 $file
+    fi
+done
 
 echo "Cleaning up ua"
 rm ua-attach-config.yaml
