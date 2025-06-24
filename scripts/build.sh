@@ -40,12 +40,24 @@ addgroup syslog
 
 chgrp syslog /var/log
 
-chgrp root /bin/mail-touchlock
-chgrp root /bin/mail-lock
-chgrp root /bin/mail-unlock
-chgrp root /usr/bin/mail-touchlock
-chgrp root /usr/bin/mail-lock
-chgrp root /usr/bin/mail-unlock
+if [-e /bin/mail-touchlock ]; then
+  chgrp root /bin/mail-touchlock
+fi
+if [-e /bin/mail-lock ]; then
+  chgrp root /bin/mail-lock
+fi
+if [-e /bin/mail-unlock ]; then
+  chgrp root /bin/mail-unlock
+fi
+if [-e /usr/bin/mail-touchlock ]; then
+  chgrp root /usr/bin/mail-touchlock
+fi
+if [-e /usr/bin/mail-lock ]; then
+  chgrp root /usr/bin/mail-lock
+fi
+if [-e /usr/bin/mail-unlock ]; then
+  chgrp root /usr/bin/mail-unlock
+fi
 
 echo "UA hardening"
 usg fix disa_stig
