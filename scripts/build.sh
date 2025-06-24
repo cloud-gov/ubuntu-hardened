@@ -40,6 +40,13 @@ addgroup syslog
 
 chgrp syslog /var/log
 
+chgrp root /bin/mail-touchlock
+chgrp root /bin/mail-lock
+chgrp root /bin/mail-unlock
+chgrp root /usr/bin/mail-touchlock
+chgrp root /usr/bin/mail-lock
+chgrp root /usr/bin/mail-unlock
+
 echo "UA hardening"
 usg fix disa_stig
 
@@ -47,4 +54,3 @@ echo "Cleaning up ua"
 rm ua-attach-config.yaml
 
 echo "Update /var/log permissions"
-find /var/log -perm /137 ! -name '*[bw]tmp' ! -name '*lastlog' -type f -exec chmod 640 '{}' \;
