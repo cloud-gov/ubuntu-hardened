@@ -40,22 +40,22 @@ addgroup syslog
 
 chgrp syslog /var/log
 
-if [-e /bin/mail-touchlock ]; then
+if [ -e /bin/mail-touchlock ]; then
   chgrp root /bin/mail-touchlock
 fi
-if [-e /bin/mail-lock ]; then
+if [ -e /bin/mail-lock ]; then
   chgrp root /bin/mail-lock
 fi
-if [-e /bin/mail-unlock ]; then
+if [ -e /bin/mail-unlock ]; then
   chgrp root /bin/mail-unlock
 fi
-if [-e /usr/bin/mail-touchlock ]; then
+if [ -e /usr/bin/mail-touchlock ]; then
   chgrp root /usr/bin/mail-touchlock
 fi
-if [-e /usr/bin/mail-lock ]; then
+if [ -e /usr/bin/mail-lock ]; then
   chgrp root /usr/bin/mail-lock
 fi
-if [-e /usr/bin/mail-unlock ]; then
+if [ -e /usr/bin/mail-unlock ]; then
   chgrp root /usr/bin/mail-unlock
 fi
 
