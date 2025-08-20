@@ -36,8 +36,10 @@ apt-get -y -q install \
 echo "Create dockerenv file"
 touch /.dockerenv
 
+echo "Add syslog group"
 addgroup syslog
 
+echo "Update group ownership for folders/files"
 chgrp syslog /var/log
 
 if [ -e /bin/mail-touchlock ]; then
@@ -59,10 +61,11 @@ if [ -e /usr/bin/mail-unlock ]; then
   chgrp root /usr/bin/mail-unlock
 fi
 
+echo "add setting to show last login"
+sed -i '1isession required pam_lastlog.so showfailed' /etc/pam.d/login
+
 echo "UA hardening"
 usg fix disa_stig
 
 echo "Cleaning up ua"
 rm ua-attach-config.yaml
-
-echo "Update /var/log permissions"
