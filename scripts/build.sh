@@ -22,7 +22,7 @@ ln -sf "/usr/share/zoneinfo/$SYSTEM_TIMEZONE" /etc/localtime
 apt-get update
 apt-get -y -q install \
   ubuntu-advantage-tools ca-certificates \
-  tzdata \
+  tzdata
 
 echo "Updating system timezone"
 ln -sf "/usr/share/zoneinfo/$SYSTEM_TIMEZONE" /etc/localtime
@@ -31,7 +31,7 @@ echo "UA attaching"
 ua attach --attach-config ua-attach-config.yaml
 
 apt-get -y -q install \
-  usg \
+  usg
 
 echo "Create dockerenv file"
 touch /.dockerenv
@@ -40,8 +40,4 @@ echo "UA hardening"
 usg fix cis_level1_server
 
 echo "Cleaning up ua"
-apt-get purge --auto-remove -y \
-  ubuntu-advantage-tools && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/lib/usg
 rm ua-attach-config.yaml
