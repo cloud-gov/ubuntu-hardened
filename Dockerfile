@@ -2,7 +2,10 @@
 ARG base_image=ubuntu:22.04
 
 FROM ${base_image}
-RUN apt update && apt upgrade -y
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt update -qq && apt upgrade -qq -y
 
 # Copy local project directories to container image
 COPY . /opt/concourse-ci/task
